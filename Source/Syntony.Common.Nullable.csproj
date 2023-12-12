@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;net472;netcoreapp3.1;net20;net7.0;net8.0</TargetFrameworks>
+        <RootNamespace>System.Diagnostics.CodeAnalysis</RootNamespace>
+        <Description>Use .NET Core 3.0's new nullable attributes in older target frameworks.</Description>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+        <!-- prevent from loading any assembly infos -->
+        <IncludeGlobalAssemblyInfo>false</IncludeGlobalAssemblyInfo>
+        <SetMetaconentFile>false</SetMetaconentFile>
+        <BuildMetacontent>false</BuildMetacontent>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateSyntonyInternalsVisibleToAttributes>false</GenerateSyntonyInternalsVisibleToAttributes>
+        <NoWarn>$(NoWarn);CA1014;CA1016;S3904</NoWarn>
+        <Version>1.2.1</Version>
+        <Company>Syntony</Company>
+        
+        <!-- Prevent any kind of magic. -->
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+
+        <!-- 
+        Get rid of:
+        Some target frameworks declared in the dependencies group of the nuspec and the lib/ref 
+        folder do not have exact matches in the other location. Consult the list of actions below:
+        - Add lib or ref assemblies for the net20 target framework- Add lib or ref assemblies for the net40 target framework
+        - Add lib or ref assemblies for the netstandard1.0 target framework
+        - Add lib or ref assemblies for the net7.0 target framework
+        - Add lib or ref assemblies for the netstandard2.0 target framework
+        - Add lib or ref assemblies for the netstandard2.1 target framework
+        -->
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+        <!-- Do not introduce our package as transient dependency. -->
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <!-- Do not add build output to package. -->
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <IncludeSymbols>false</IncludeSymbols>
+    </PropertyGroup>
+
+    <!-- Provides PackagePathStaticAnalyseAttributesFolder variable. -->
+    <Import Project="$(MSBuildThisFileDirectory)build/$(MSBuildThisFilename).Core.props" />
+
+    <PropertyGroup>
+        <_PackagePathSubFolder>$(PackagePathStaticAnalyseAttributesFolder)</_PackagePathSubFolder>
+        <_PackagePath>contentFiles/cs/$(TargetFramework)/$(_PackagePathSubFolder);content/$(TargetFramework)/$(_PackagePathSubFolder)</_PackagePath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Search for .cs-files one level deep. Otherwise we would have to exclude Properties/* manually. -->
+        <StaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)*.cs">
+            <StaticAnalyseAttributeCSFilePath>$(MSBuildThisFileDirectory)%(RecursiveDir)/%(Filename)%(Extension)</StaticAnalyseAttributeCSFilePath>
+            <_PackagePath>$(_PackagePath)</_PackagePath>
+            <_PackageBuildAction>Compile</_PackageBuildAction>
+
+            <AnnotatedWithExcludeFromCodeCoverage>false</AnnotatedWithExcludeFromCodeCoverage>
+            <AnnotatedWithExcludeFromCodeCoverage Condition="$([System.String]::Copy(%(Filename)).Contains('ExcludeFromCodeCoverage'))">true</AnnotatedWithExcludeFromCodeCoverage>
+
+            <IsMemberNotNullOrWhenAttribute>false</IsMemberNotNullOrWhenAttribute>
+            <IsMemberNotNullOrWhenAttribute Condition="$([System.String]::Copy(%(Filename)).StartsWith('MemberNotNull'))">true</IsMemberNotNullOrWhenAttribute>
+        </StaticAnalyseAttributeCSFiles>
+
+        <!-- Needed when we search more than one level deep (globbing). -->
+        <!--<StaticAnalyseAttributeCSFiles Remove="obj/**/*.cs" />-->
+        <!--<StaticAnalyseAttributeCSFiles Remove="Properties/**/*.cs" />-->
+
+        <NetStandard1_0CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles-&gt;WithMetadataValue('AnnotatedWithExcludeFromCodeCoverage','false'))" />
+        <Net20CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard1_0CompliantStaticAnalyseAttributeCSFiles)" />
+
+        <NetStandard2_0CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles)" />
+        <Net40CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles)" />
+
+        <NetStandard2_1CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles-&gt;WithMetadataValue('IsMemberNotNullOrWhenAttribute','true'))" />
+        <NetCoreApp3_0CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles)" />
+        <NetCoreApp3_1CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles)" />
+
+        <Net5_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
+            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
+            <_PackagePath>$(_PackagePath)</_PackagePath>
+            <_PackageBuildAction>Content</_PackageBuildAction>
+        </Net5_0CompliantStaticAnalyseAttributeCSFiles>
+        <Net6_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
+            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
+            <_PackagePath>$(_PackagePath)</_PackagePath>
+            <_PackageBuildAction>Content</_PackageBuildAction>
+        </Net6_0CompliantStaticAnalyseAttributeCSFiles>
+        <Net7_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
+            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
+            <_PackagePath>$(_PackagePath)</_PackagePath>
+            <_PackageBuildAction>Content</_PackageBuildAction>
+        </Net7_0CompliantStaticAnalyseAttributeCSFiles>
+        <Net8_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
+            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
+            <_PackagePath>$(_PackagePath)</_PackagePath>
+            <_PackageBuildAction>Content</_PackageBuildAction>
+        </Net8_0CompliantStaticAnalyseAttributeCSFiles>
+    </ItemGroup>
+
+    <!-- THIS AREA IS FOR OTHER PROJECTS THAT REFERENCE THIS PROJECT -->
+
+    <ItemGroup>
+        <!--
+      We add them all as None, because otherwise some files are hidden.
+      
+      The downside is that we only have the view with
+      TargetFramework=netstandard2.0 in Visual Studio.
+      It does not conflict with <Compile></Compile>.
+     -->
+        <None Include="@(StaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+        <!-- Remove all attributes because we are going to compile them individually by target framework. -->
+        <Compile Remove="@(StaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+    </ItemGroup>
+
+    <!-- Now compile them dependent on framework. -->
+    <Choose>
+
+        <When Condition="'$(TargetFramework)' == 'netstandard1.0'">
+            <ItemGroup>
+                <Compile Include="@(NetStandard1_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'net20'">
+            <ItemGroup>
+                <Compile Include="@(Net20CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'netstandard2.0'">
+            <ItemGroup>
+                <Compile Include="@(NetStandard2_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'net40'">
+            <ItemGroup>
+                <Compile Include="@(Net40CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'netstandard2.1'">
+            <ItemGroup>
+                <Compile Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+            <ItemGroup>
+                <Compile Include="@(NetCoreApp3_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+            <ItemGroup>
+                <Compile Include="@(NetCoreApp3_1CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
+            </ItemGroup>
+        </When>
+
+        <Otherwise>
+            <!-- Other frameworks do not need any further attributes. -->
+        </Otherwise>
+
+    </Choose>
+
+    <!-- THIS AREA IS FOR PACKAGE CREATION -->
+    <PropertyGroup>
+        <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);AddStaticAnalyseAttributesCSFilesToPackage</TargetsForTfmSpecificContentInPackage>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="build\*" Pack="true" PackagePath="build" />
+        <None Include="buildMultiTargeting\*" Pack="true" PackagePath="buildMultiTargeting" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="img\" />
+    </ItemGroup>
+
+    <Target Name="AddStaticAnalyseAttributesCSFilesToPackage">
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(NetStandard1_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'netstandard1.0'">
+                <!-- Only needed in <ItemGroup><Content></Content></ItemGroup> or aquivalent. -->
+                <!--<Pack>true</Pack>-->
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net20CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net20'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(NetStandard2_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'netstandard2.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net40CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net40'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'netstandard2.1'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(NetCoreApp3_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(NetCoreApp3_1CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net5_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net5.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net6_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net6.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net7_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net7.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="@(Net8_0CompliantStaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" Condition="'$(TargetFramework)' == 'net8.0'">
+                <PackagePath>%(_PackagePath)</PackagePath>
+                <BuildAction>%(_PackageBuildAction)</BuildAction>
+            </TfmSpecificPackageFile>
+        </ItemGroup>
+
+    </Target>
+</Project>

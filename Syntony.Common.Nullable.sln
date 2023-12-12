@@ -1,0 +1,228 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonProperties", "CommonProperties", "{5A1DC832-AC84-4275-A500-BC39D2C686F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs LOCAL", ".configs LOCAL", "{06A49BAB-0537-4B17-9F40-A6CC6ED073C2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.globalconfig = .globalconfig
+		.mailmap = .mailmap
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs ROOT", ".configs ROOT", "{6CB0ECE8-4C23-4A28-82B6-45AAFC6A8ED0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\.gitattributes = ..\..\..\.gitattributes
+		..\..\..\.gitconfig = ..\..\..\.gitconfig
+		..\..\..\.gitignore = ..\..\..\.gitignore
+		..\..\..\.globalconfig = ..\..\..\.globalconfig
+		..\..\..\.mailmap = ..\..\..\.mailmap
+		..\..\..\..\..\CommonProperties\Tools\NuGet.Config = ..\..\..\..\..\CommonProperties\Tools\NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{6DDA2E89-C72E-4591-A762-95B98892ECC6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Syntony.MSBuild.DevelopmentNotes.props = ..\..\..\CommonProperties\BuildScripts\Syntony.MSBuild.DevelopmentNotes.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedSources", "SharedSources", "{AE49B6CD-0C0D-4EAC-BEB1-215245D803F4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\SharedSources\AssemblyInfo - TEMPLATE.cs = ..\..\..\CommonProperties\SharedSources\AssemblyInfo - TEMPLATE.cs
+		..\..\..\CommonProperties\SharedSources\Global.AssemblyInfo.cs = ..\..\..\CommonProperties\SharedSources\Global.AssemblyInfo.cs
+		..\..\..\CommonProperties\SharedSources\Metacontent.tt = ..\..\..\CommonProperties\SharedSources\Metacontent.tt
+		..\..\..\CommonProperties\SharedSources\MetacontentAssemblyInfo.tt = ..\..\..\CommonProperties\SharedSources\MetacontentAssemblyInfo.tt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{552BF091-C2C1-4AA2-9083-4E47E2592BA4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\BulkReplace.ps1 = ..\..\..\BulkReplace.ps1
+		..\..\..\Delete all bin and obj.ps1 = ..\..\..\Delete all bin and obj.ps1
+		..\..\..\mkLink for build.root and Directory.Build to CommonProperties Directory.bat = ..\..\..\mkLink for build.root and Directory.Build to CommonProperties Directory.bat
+		..\..\..\SearchReplace.ps1 = ..\..\..\SearchReplace.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\README.Syntony.md = ..\..\..\CommonProperties\README.Syntony.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Props", "Props", "{FA5317B5-34CF-4DCB-82CE-AF397637C1D2}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Company.props = ..\..\..\CommonProperties\BuildScripts\Company.props
+		..\..\..\CommonProperties\BuildScripts\Josef.props = ..\..\..\CommonProperties\BuildScripts\Josef.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Common.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Common.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.props = ..\..\..\CommonProperties\BuildScripts\Syntony.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.ReleaseNotes.props = ..\..\..\CommonProperties\BuildScripts\Syntony.ReleaseNotes.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.CSharp.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.CSharp.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.DefaultItems.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.DefaultItems.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Language.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Language.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.NuGet.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.NuGet.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.ProjectEnvironment.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.ProjectEnvironment.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.SolutionConfiguration.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.SolutionConfiguration.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.User.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.User.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{074317DD-5C7A-455A-9D17-4312F0F76CEC}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Analyzers.PackageReference.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Analyzers.PackageReference.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Common.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Common.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.DefaultItems.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.DefaultItems.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Metacontent.TextTemplating.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Metacontent.TextTemplating.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.NuGet.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.NuGet.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.PackageReference.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.PackageReference.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.ProjectEnvironment.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.ProjectEnvironment.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.RootNamespace.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.RootNamespace.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Test.PackageReference.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Test.PackageReference.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.VSIX.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.VSIX.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Shipping.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Shipping.targets
+		..\..\..\CommonProperties\BuildScripts\Syntony.Version.targets = ..\..\..\CommonProperties\BuildScripts\Syntony.Version.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{4DA53113-0A80-4E08-B833-76631021193D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Common.tasks = ..\..\..\CommonProperties\BuildScripts\Syntony.Sdk.Common.tasks
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{DEA3FCB8-EB3C-4FBC-B728-5FE60B8220F8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\build.root = ..\..\..\build.root
+		..\..\..\Directory.Build.props = ..\..\..\Directory.Build.props
+		..\..\..\Directory.Build.rsp = ..\..\..\Directory.Build.rsp
+		..\..\..\Directory.Build.targets = ..\..\..\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licenses", "Licenses", "{AB9A4594-E1CC-4422-A99F-1D37D2D727DF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\Licenses\Apache License.txt = ..\..\..\CommonProperties\Licenses\Apache License.txt
+		..\..\..\CommonProperties\Licenses\GNU License.txt = ..\..\..\CommonProperties\Licenses\GNU License.txt
+		..\..\..\CommonProperties\Licenses\LICENSE.md = ..\..\..\CommonProperties\Licenses\LICENSE.md
+		..\..\..\CommonProperties\Licenses\MIT License.txt = ..\..\..\CommonProperties\Licenses\MIT License.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Guidelines", "Guidelines", "{2B407B47-1B70-40B5-82BB-5AC95EFF7F5E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\Guidelines\cs-coding-standards.docx = ..\..\..\CommonProperties\Guidelines\cs-coding-standards.docx
+		..\..\..\CommonProperties\Guidelines\Syntony.Basics.docx = ..\..\..\CommonProperties\Guidelines\Syntony.Basics.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution.Build", "Solution.Build", "{7B2AF4EE-A99B-4063-8B6D-A3FE67A85869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution.Build", "Solution.Build", "{CD769DD4-7A73-46C4-92B1-014BD20C1B37}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Syntony.Framework.Build.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Framework.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{F25A44EB-8AF3-4A0B-9CED-E12857E158CD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Directory.Build.targets = ..\..\..\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{0D0155AB-7CC9-4D02-BF4A-15976B8294E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\build.root = ..\..\..\build.root
+		..\..\..\Directory.Build.props = ..\..\..\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project.Build", "Project.Build", "{A737609C-BF69-47EF-ADF0-97542AD6000C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\BuildScripts\Syntony.Common.Core.Basics.Build.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Common.Core.Basics.Build.props
+		..\..\..\CommonProperties\BuildScripts\Syntony.Common.Nullable.Build.props = ..\..\..\CommonProperties\BuildScripts\Syntony.Common.Nullable.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project.Build", "Project.Build", "{068C32CD-422E-42C7-8C16-E88704B1B301}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{07CA2C93-10B9-4BCB-B5D7-CA0C33A4861B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellaneous", "{5BE3C8BE-B028-487A-8F94-2CD8CABF05A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{ADBC6004-6E34-4681-831D-A471F085CEDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{171BB55C-5A0B-4EBF-B82D-0CFAA054A92C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{644336E4-9CC0-4A54-8A9D-DC48E1144F92}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Syntony.Framework.README.md = ..\..\Syntony.Framework.README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syntony.Common.Nullable", "Source\Syntony.Common.Nullable.csproj", "{DAEF39CC-6E9C-4758-A353-17E84A4183D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionLevel", "SolutionLevel", "{37BB3610-CDCC-46AB-9886-5EC90711757E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CodeAnalysis|Any CPU = CodeAnalysis|Any CPU
+		CodeAnalysis|x64 = CodeAnalysis|x64
+		CodeAnalysis|x86 = CodeAnalysis|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		PushNugetPackage|Any CPU = PushNugetPackage|Any CPU
+		PushNugetPackage|x64 = PushNugetPackage|x64
+		PushNugetPackage|x86 = PushNugetPackage|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|Any CPU.ActiveCfg = CodeAnalysis|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|Any CPU.Build.0 = CodeAnalysis|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|x64.ActiveCfg = CodeAnalysis|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|x64.Build.0 = CodeAnalysis|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|x86.ActiveCfg = CodeAnalysis|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.CodeAnalysis|x86.Build.0 = CodeAnalysis|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|x64.ActiveCfg = Debug|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|x64.Build.0 = Debug|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|x86.ActiveCfg = Debug|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Debug|x86.Build.0 = Debug|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|Any CPU.ActiveCfg = PushNugetPackage|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|Any CPU.Build.0 = PushNugetPackage|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|x64.ActiveCfg = PushNugetPackage|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|x64.Build.0 = PushNugetPackage|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|x86.ActiveCfg = PushNugetPackage|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.PushNugetPackage|x86.Build.0 = PushNugetPackage|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|x64.ActiveCfg = Release|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|x64.Build.0 = Release|x64
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|x86.ActiveCfg = Release|x86
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06A49BAB-0537-4B17-9F40-A6CC6ED073C2} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{6CB0ECE8-4C23-4A28-82B6-45AAFC6A8ED0} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{6DDA2E89-C72E-4591-A762-95B98892ECC6} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{AE49B6CD-0C0D-4EAC-BEB1-215245D803F4} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{552BF091-C2C1-4AA2-9083-4E47E2592BA4} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{FA5317B5-34CF-4DCB-82CE-AF397637C1D2} = {6DDA2E89-C72E-4591-A762-95B98892ECC6}
+		{074317DD-5C7A-455A-9D17-4312F0F76CEC} = {6DDA2E89-C72E-4591-A762-95B98892ECC6}
+		{4DA53113-0A80-4E08-B833-76631021193D} = {6DDA2E89-C72E-4591-A762-95B98892ECC6}
+		{DEA3FCB8-EB3C-4FBC-B728-5FE60B8220F8} = {6DDA2E89-C72E-4591-A762-95B98892ECC6}
+		{AB9A4594-E1CC-4422-A99F-1D37D2D727DF} = {6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1}
+		{2B407B47-1B70-40B5-82BB-5AC95EFF7F5E} = {6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1}
+		{7B2AF4EE-A99B-4063-8B6D-A3FE67A85869} = {074317DD-5C7A-455A-9D17-4312F0F76CEC}
+		{CD769DD4-7A73-46C4-92B1-014BD20C1B37} = {FA5317B5-34CF-4DCB-82CE-AF397637C1D2}
+		{F25A44EB-8AF3-4A0B-9CED-E12857E158CD} = {074317DD-5C7A-455A-9D17-4312F0F76CEC}
+		{0D0155AB-7CC9-4D02-BF4A-15976B8294E8} = {FA5317B5-34CF-4DCB-82CE-AF397637C1D2}
+		{A737609C-BF69-47EF-ADF0-97542AD6000C} = {FA5317B5-34CF-4DCB-82CE-AF397637C1D2}
+		{068C32CD-422E-42C7-8C16-E88704B1B301} = {074317DD-5C7A-455A-9D17-4312F0F76CEC}
+		{07CA2C93-10B9-4BCB-B5D7-CA0C33A4861B} = {ADBC6004-6E34-4681-831D-A471F085CEDD}
+		{DAEF39CC-6E9C-4758-A353-17E84A4183D1} = {ADBC6004-6E34-4681-831D-A471F085CEDD}
+		{37BB3610-CDCC-46AB-9886-5EC90711757E} = {07CA2C93-10B9-4BCB-B5D7-CA0C33A4861B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1F76A65-568F-4FEF-9BF8-F52CB2C8AF73}
+	EndGlobalSection
+EndGlobal
