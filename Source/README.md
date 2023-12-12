@@ -1,4 +1,5 @@
-# Syntony.Common.Nullable [![Nuget](https://www.nuget.org/packages/Syntony.Common.Nullable/)][NuGet Package]
+# Syntony.Common.Nullable [![NuGet](https://img.shields.io/nuget/v/Syntony.Common.Nullable.svg)](https://www.nuget.org/packages/Syntony.Common.Nullable)
+
 
 _Use .NET Core 3.0's new nullable attributes in older target frameworks._
 
@@ -86,7 +87,8 @@ install the package for your target framework.
 
 ## Quick Start Guide
 
-> :warning: **Important:** <br/>
+> :warning: **Important:**
+>
 > You **must** use a C# version >= 8.0 with the `Syntony.Common.Nullable` package - otherwise, your project won't compile.
 
 The steps below assume that you are using the **new SDK `.csproj`** style.
