@@ -13,7 +13,7 @@
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <GenerateSyntonyInternalsVisibleToAttributes>false</GenerateSyntonyInternalsVisibleToAttributes>
         <NoWarn>$(NoWarn);CA1014;CA1016;S3904</NoWarn>
-        <Version>1.2.1</Version>
+        <Version>1.2.2</Version>
         <Company>Syntony</Company>
         
         <!-- Prevent any kind of magic. -->
@@ -256,4 +256,16 @@
         </ItemGroup>
 
     </Target>
+
+    <ItemGroup>
+      <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
+    </ItemGroup>
 </Project>
