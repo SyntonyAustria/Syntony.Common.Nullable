@@ -2,4 +2,4 @@
 
 _A source code only package which allows you to use .NET's nullable attributes in older target frameworks like .NET Standard 2.0 or the "old" .NET Framework._
 
-See detailed info at [**Nullable Project**](https://github.com/SyntonyAustria/Syntony.Common.Nullable/blob/master/Source/README.md)
+See detailed info at [**Nullable Project**](Source/README.md)

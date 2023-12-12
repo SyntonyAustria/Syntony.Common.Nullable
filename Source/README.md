@@ -6,9 +6,12 @@ _Use .NET Core 3.0's new nullable attributes in older target frameworks._
 
 ## Prologue
 
-This project (Syntony.Common.Nullable) was a fork of [Nullable](https://github.com/manuelroemer/Nullable). In fact the project Nullable is in the SDK format but the package creation is not in the SDK format and uses nuget.exe directly. This fork has just moved the NuGet part to the new SDK format. Moreover is the the unattractive and separate build process obsolete now. The project Syntony.Common.Nullable is in such a way designed to be includable by ProjectReference and is heavily used by Syntony.Common.Dotnet.
+**Syntony.Common.Nullable** was a fork of [Nullable](https://github.com/manuelroemer/Nullable). 
+In fact the project **Syntony.Common.Nullable** is in the SDK format but the package creation is not in the SDK format and uses nuget.exe directly. 
+This fork has just moved the NuGet part to the new SDK format. Moreover is the the unattractive and separate build process obsolete now. 
+The project **Syntony.Common.Nullable** is in such a way designed to be includable by ProjectReference and is heavily used by ***Syntony***.
 
-**When you face any issues with Syntony.Common.Nullable please do not open an issue in the repository of Nullable but open an issue [here](https://github.com/SyntonyAustria/Syntony.Common.Nullable/issues).**
+**When you face any issues with Syntony.Common.Nullable please do not open an issue in the repository of Nullable but open an [issue](https://github.com/SyntonyAustria/Syntony.Common.Nullable/issues).**
 
 ## About Syntony.Common.Nullable
 
