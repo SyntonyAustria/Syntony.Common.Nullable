@@ -8,12 +8,14 @@
 
         <!-- prevent from loading any assembly infos -->
         <IncludeGlobalAssemblyInfo>false</IncludeGlobalAssemblyInfo>
+        <IncludeSyntonyAssemblyInfo>false</IncludeSyntonyAssemblyInfo>
+        <IncludeInternalsVisibleToSyntonyAssemblyInfo>false</IncludeInternalsVisibleToSyntonyAssemblyInfo>
         <SetMetaconentFile>false</SetMetaconentFile>
         <BuildMetacontent>false</BuildMetacontent>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <GenerateSyntonyInternalsVisibleToAttributes>false</GenerateSyntonyInternalsVisibleToAttributes>
-        <NoWarn>$(NoWarn);CA1014;CA1016;S3904</NoWarn>
-        <Version>1.2.2</Version>
+        <NoWarn>$(NoWarn);CA1014;CA1016;S3904;CS8032</NoWarn>
+        <Version>1.3.0</Version>
         <Company>Syntony</Company>
         
         <!-- Prevent any kind of magic. -->
@@ -36,6 +38,11 @@
         <!-- Do not add build output to package. -->
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <IncludeSymbols>false</IncludeSymbols>
+        <!-- avoid generating UserSecretsAttribute -->
+        <UserSecretsId></UserSecretsId>
+        <GenerateUserSecretsAttribute>false</GenerateUserSecretsAttribute>
+
+        <SignAssembly>false</SignAssembly>
     </PropertyGroup>
 
     <!-- Provides PackagePathStaticAnalyseAttributesFolder variable. -->
@@ -58,6 +65,9 @@
 
             <IsMemberNotNullOrWhenAttribute>false</IsMemberNotNullOrWhenAttribute>
             <IsMemberNotNullOrWhenAttribute Condition="$([System.String]::Copy(%(Filename)).StartsWith('MemberNotNull'))">true</IsMemberNotNullOrWhenAttribute>
+
+            <IsStringSyntaxAttribute>false</IsStringSyntaxAttribute>
+            <IsStringSyntaxAttribute Condition="$([System.String]::Copy(%(Filename)).StartsWith('StringSyntax'))">true</IsStringSyntaxAttribute>
         </StaticAnalyseAttributeCSFiles>
 
         <!-- Needed when we search more than one level deep (globbing). -->
@@ -74,16 +84,9 @@
         <NetCoreApp3_0CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles)" />
         <NetCoreApp3_1CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles)" />
 
-        <Net5_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
-            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
-            <_PackagePath>$(_PackagePath)</_PackagePath>
-            <_PackageBuildAction>Content</_PackageBuildAction>
-        </Net5_0CompliantStaticAnalyseAttributeCSFiles>
-        <Net6_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
-            <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
-            <_PackagePath>$(_PackagePath)</_PackagePath>
-            <_PackageBuildAction>Content</_PackageBuildAction>
-        </Net6_0CompliantStaticAnalyseAttributeCSFiles>
+        <Net5_0CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles-&gt;WithMetadataValue('IsStringSyntaxAttribute','true'))" />
+        <Net6_0CompliantStaticAnalyseAttributeCSFiles Include="@(Net5_0CompliantStaticAnalyseAttributeCSFiles)" />
+
         <Net7_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">
             <StaticAnalyseAttributeCSFilePath>%(FullPath)</StaticAnalyseAttributeCSFilePath>
             <_PackagePath>$(_PackagePath)</_PackagePath>
@@ -100,12 +103,11 @@
 
     <ItemGroup>
         <!--
-      We add them all as None, because otherwise some files are hidden.
-      
-      The downside is that we only have the view with
-      TargetFramework=netstandard2.0 in Visual Studio.
-      It does not conflict with <Compile></Compile>.
-     -->
+            We add them all as None, because otherwise some files are hidden.
+            The downside is that we only have the view with
+            TargetFramework=netstandard2.0 in Visual Studio.
+            It does not conflict with <Compile></Compile>.
+        -->
         <None Include="@(StaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
         <!-- Remove all attributes because we are going to compile them individually by target framework. -->
         <Compile Remove="@(StaticAnalyseAttributeCSFiles->'%(StaticAnalyseAttributeCSFilePath)')" />
@@ -261,11 +263,4 @@
       <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\LICENSE.md" />
-    </ItemGroup>
 </Project>

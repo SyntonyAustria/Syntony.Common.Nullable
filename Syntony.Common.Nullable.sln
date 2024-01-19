@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs ROOT", ".configs R
 		..\..\..\.gitignore = ..\..\..\.gitignore
 		..\..\..\.globalconfig = ..\..\..\.globalconfig
 		..\..\..\.mailmap = ..\..\..\.mailmap
+		C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe.config = C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe.config
 		..\..\..\..\..\CommonProperties\Tools\NuGet.Config = ..\..\..\..\..\CommonProperties\Tools\NuGet.Config
+		..\..\..\..\..\stylecop.json = ..\..\..\..\..\stylecop.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{6DDA2E89-C72E-4591-A762-95B98892ECC6}"
@@ -46,9 +48,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{552B
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\CommonProperties\README.Syntony.md = ..\..\..\CommonProperties\README.Syntony.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Props", "Props", "{FA5317B5-34CF-4DCB-82CE-AF397637C1D2}"
 	ProjectSection(SolutionItems) = preProject
@@ -143,12 +142,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{ADBC60
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{171BB55C-5A0B-4EBF-B82D-0CFAA054A92C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{644336E4-9CC0-4A54-8A9D-DC48E1144F92}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{644336E4-9CC0-4A54-8A9D-DC48E1144F92}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Syntony.Framework.README.md = ..\..\Syntony.Framework.README.md
+		..\..\.gitattributes = ..\..\.gitattributes
+		..\..\.gitignore = ..\..\.gitignore
+		..\..\.mailmap = ..\..\.mailmap
+		..\..\README.md = ..\..\README.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syntony.Common.Nullable", "Source\Syntony.Common.Nullable.csproj", "{DAEF39CC-6E9C-4758-A353-17E84A4183D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionLevel", "SolutionLevel", "{37BB3610-CDCC-46AB-9886-5EC90711757E}"
 	ProjectSection(SolutionItems) = preProject
@@ -160,6 +160,63 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectLevel", "ProjectLeve
 		Source\README.md = Source\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs COMPUTER", ".configs COMPUTER", "{9B3F8890-24C3-41D7-A4E9-3497FFA9B89E}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.FallbackLocation.config = C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.FallbackLocation.config
+		C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config = C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs USER", ".configs USER", "{087E27AE-0152-47DB-A807-67ACCCF26192}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Josef\AppData\Roaming\NuGet\NuGet.Config = C:\Users\Josef\AppData\Roaming\NuGet\NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonProperties", "CommonProperties", "{E853E224-851E-4322-87FD-B213BAF2D350}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\README.md = ..\..\..\CommonProperties\README.md
+		..\..\..\CommonProperties\README.txt = ..\..\..\CommonProperties\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{62ED4BAB-887F-43D7-ADBF-19DC8D096D52}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\CommonProperties\Docs\README.AI.md = ..\..\..\CommonProperties\Docs\README.AI.md
+		..\..\..\CommonProperties\Docs\README.BuildOperation.md = ..\..\..\CommonProperties\Docs\README.BuildOperation.md
+		..\..\..\CommonProperties\Docs\README.Contact.md = ..\..\..\CommonProperties\Docs\README.Contact.md
+		..\..\..\CommonProperties\Docs\README.Directory.Build.props.md = ..\..\..\CommonProperties\Docs\README.Directory.Build.props.md
+		..\..\..\CommonProperties\Docs\README.Directory.Build.targets.md = ..\..\..\CommonProperties\Docs\README.Directory.Build.targets.md
+		..\..\..\CommonProperties\Docs\README.Documentation.md = ..\..\..\CommonProperties\Docs\README.Documentation.md
+		..\..\..\CommonProperties\Docs\README.Editorconfig.md = ..\..\..\CommonProperties\Docs\README.Editorconfig.md
+		..\..\..\CommonProperties\Docs\README.Git.md = ..\..\..\CommonProperties\Docs\README.Git.md
+		..\..\..\CommonProperties\Docs\README.Gitattributes.md = ..\..\..\CommonProperties\Docs\README.Gitattributes.md
+		..\..\..\CommonProperties\Docs\README.Gitignore.md = ..\..\..\CommonProperties\Docs\README.Gitignore.md
+		..\..\..\CommonProperties\Docs\README.Globalconfig.md = ..\..\..\CommonProperties\Docs\README.Globalconfig.md
+		..\..\..\CommonProperties\Docs\README.HelpfulLinks.md = ..\..\..\CommonProperties\Docs\README.HelpfulLinks.md
+		..\..\..\CommonProperties\Docs\README.Introduction.md = ..\..\..\CommonProperties\Docs\README.Introduction.md
+		..\..\..\CommonProperties\Docs\README.License.md = ..\..\..\CommonProperties\Docs\README.License.md
+		..\..\..\CommonProperties\Docs\README.Mailmap.md = ..\..\..\CommonProperties\Docs\README.Mailmap.md
+		..\..\..\CommonProperties\Docs\README.Markdown.md = ..\..\..\CommonProperties\Docs\README.Markdown.md
+		..\..\..\CommonProperties\Docs\README.MSBuildFiles.md = ..\..\..\CommonProperties\Docs\README.MSBuildFiles.md
+		..\..\..\CommonProperties\Docs\README.NetAnalyzers.md = ..\..\..\CommonProperties\Docs\README.NetAnalyzers.md
+		..\..\..\CommonProperties\Docs\README.NetSDK.md = ..\..\..\CommonProperties\Docs\README.NetSDK.md
+		..\..\..\CommonProperties\Docs\README.NuGet.md = ..\..\..\CommonProperties\Docs\README.NuGet.md
+		..\..\..\CommonProperties\Docs\README.Pack.md = ..\..\..\CommonProperties\Docs\README.Pack.md
+		..\..\..\CommonProperties\Docs\README.ProjectStructure.md = ..\..\..\CommonProperties\Docs\README.ProjectStructure.md
+		..\..\..\CommonProperties\Docs\README.Props.md = ..\..\..\CommonProperties\Docs\README.Props.md
+		..\..\..\CommonProperties\Docs\README.Readme.md = ..\..\..\CommonProperties\Docs\README.Readme.md
+		..\..\..\CommonProperties\Docs\README.SignAssembly.md = ..\..\..\CommonProperties\Docs\README.SignAssembly.md
+		..\..\..\CommonProperties\Docs\README.Sln.md = ..\..\..\CommonProperties\Docs\README.Sln.md
+		..\..\..\CommonProperties\Docs\README.SoftwareWeUse.md = ..\..\..\CommonProperties\Docs\README.SoftwareWeUse.md
+		..\..\..\CommonProperties\Docs\README.StrongNaming.md = ..\..\..\CommonProperties\Docs\README.StrongNaming.md
+		..\..\..\CommonProperties\Docs\README.Stylecop.md = ..\..\..\CommonProperties\Docs\README.Stylecop.md
+		..\..\..\CommonProperties\Docs\README.Suo.md = ..\..\..\CommonProperties\Docs\README.Suo.md
+		..\..\..\CommonProperties\Docs\README.Syntony.md = ..\..\..\CommonProperties\Docs\README.Syntony.md
+		..\..\..\CommonProperties\Docs\README.Targets.md = ..\..\..\CommonProperties\Docs\README.Targets.md
+	EndProjectSection
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syntony.Common.Nullable", "Source\Syntony.Common.Nullable.csproj", "{DAEF39CC-6E9C-4758-A353-17E84A4183D1}"
+EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeAnalysis|Any CPU = CodeAnalysis|Any CPU
@@ -227,6 +284,10 @@ Global
 		{DAEF39CC-6E9C-4758-A353-17E84A4183D1} = {ADBC6004-6E34-4681-831D-A471F085CEDD}
 		{37BB3610-CDCC-46AB-9886-5EC90711757E} = {07CA2C93-10B9-4BCB-B5D7-CA0C33A4861B}
 		{4883344B-286C-45C7-B497-3856E59C9788} = {07CA2C93-10B9-4BCB-B5D7-CA0C33A4861B}
+		{9B3F8890-24C3-41D7-A4E9-3497FFA9B89E} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{087E27AE-0152-47DB-A807-67ACCCF26192} = {5A1DC832-AC84-4275-A500-BC39D2C686F2}
+		{E853E224-851E-4322-87FD-B213BAF2D350} = {6A60C4D9-66CD-4F9C-AAF9-AE4D621947E1}
+		{62ED4BAB-887F-43D7-ADBF-19DC8D096D52} = {E853E224-851E-4322-87FD-B213BAF2D350}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1F76A65-568F-4FEF-9BF8-F52CB2C8AF73}

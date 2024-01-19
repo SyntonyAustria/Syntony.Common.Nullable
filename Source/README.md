@@ -73,6 +73,8 @@ In C# 8.0 and later, the following attributes are used by the compiler for [null
 
 11. [**MemberNotNullWhen(bool, string)**](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.codeanalysis.membernotnullwhenattribute): Helper method: Specifies that the specified member of the containing type will not be null when the method returns the specified boolean value.These attributes are part of the System.Diagnostics.CodeAnalysis namespace. They are used to annotate your code and inform the compiler about the nullability contract of your code, which helps the compiler provide better warnings and errors about potential null reference exceptions.
 
+11. [**StringSyntaxAttribute(string)**](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.codeanalysis.stringsyntaxattribute?view=net-8.0): Helper method: Specifies the syntax used in a string.
+
 
 ## Compatibility
 
