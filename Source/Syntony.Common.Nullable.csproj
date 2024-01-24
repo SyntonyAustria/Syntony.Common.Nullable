@@ -15,7 +15,7 @@
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <GenerateSyntonyInternalsVisibleToAttributes>false</GenerateSyntonyInternalsVisibleToAttributes>
         <NoWarn>$(NoWarn);CA1014;CA1016;S3904;CS8032</NoWarn>
-        <Version>1.3.0</Version>
+        <Version>1.4.0</Version>
         <Company>Syntony</Company>
         
         <!-- Prevent any kind of magic. -->
@@ -68,6 +68,9 @@
 
             <IsStringSyntaxAttribute>false</IsStringSyntaxAttribute>
             <IsStringSyntaxAttribute Condition="$([System.String]::Copy(%(Filename)).StartsWith('StringSyntax'))">true</IsStringSyntaxAttribute>
+
+            <IsCallerArgumentExpressionAttribute>false</IsCallerArgumentExpressionAttribute>
+            <IsCallerArgumentExpressionAttribute Condition="$([System.String]::Copy(%(Filename)).StartsWith('CallerArgumentExpression'))">true</IsCallerArgumentExpressionAttribute>
         </StaticAnalyseAttributeCSFiles>
 
         <!-- Needed when we search more than one level deep (globbing). -->
@@ -85,6 +88,7 @@
         <NetCoreApp3_1CompliantStaticAnalyseAttributeCSFiles Include="@(NetStandard2_1CompliantStaticAnalyseAttributeCSFiles)" />
 
         <Net5_0CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles-&gt;WithMetadataValue('IsStringSyntaxAttribute','true'))" />
+        <Net5_0CompliantStaticAnalyseAttributeCSFiles Include="@(StaticAnalyseAttributeCSFiles-&gt;WithMetadataValue('IsCallerArgumentExpressionAttribute','true'))" />
         <Net6_0CompliantStaticAnalyseAttributeCSFiles Include="@(Net5_0CompliantStaticAnalyseAttributeCSFiles)" />
 
         <Net7_0CompliantStaticAnalyseAttributeCSFiles Include="$(MSBuildThisFileDirectory)content/_._">

@@ -1,12 +1,12 @@
 ﻿// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // <copyright file="DisallowNullAttribute.cs" company="Syntony">
-//     Copyright © 2017 - 2023 by Syntony® / Ing. Josef Hahnl, MBA - syntony@aon.at - All rights reserved.
+//     Copyright © 2017 - 2024 by Syntony® / Ing. Josef Hahnl, MBA - syntony@aon.at - All rights reserved.
 // </copyright>
 // <author>Josef Hahnl - Josef</author>
 // <email>syntony@aon.at</email>
-// <date>11.12.2023 13:35:53</date>
+// <date>24.01.2024 16:25:06</date>
 // <information solution="Syntony.Common.Nullable" project="Syntony.Common.Nullable" framework=".NETStandard,Version=v1.0" kind="Windows (C# - csproj)">
-//     <file type=".cs" created="20.11.2022 04:29:22" modified="11.12.2023 13:35:53" lastAccess="11.12.2023 13:35:53">
+//     <file type=".cs" created="20.11.2022 04:29:22" modified="24.01.2024 16:25:06" lastAccess="24.01.2024 16:25:06">
 //         D:\Syntony\Proj\Syntony\Framework\Source\Syntony.Common.Nullable\Source\DisallowNullAttribute.cs
 //     </file>
 //     <lineStatistics total="59" netLines="56" blankLines ="3" codeLines="52" codeRatio="88.14 %" allCommentLines="31" commentLines="1" headerLines="30" documentationLines="4"/>
